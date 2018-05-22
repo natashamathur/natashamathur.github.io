@@ -1,44 +1,336 @@
 
-<!doctype html>
-<html lang="en">
-  <head>
-    <style>
-body {
-    background-color: #35125F;
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title></title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
 }
 </style>
 
 
-    <p><style="font-family:verdana" font size="48" color="white"><center>Natasha Mathur</center></font></p>
+</head>
 
-  </head>
+<body>
 
-  <body>
-    
-    <br>
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+</style>
 
-<img class="card-img-top" src="https://scontent-ort2-1.xx.fbcdn.net/v/t31.0-8/25734068_10214544939514165_3810155142504732307_o.jpg?oh=ad56534b0cfdc48784f64084f098863d&oe=5B09442D" alt="Card image cap"
-     style="width:220;height:300; align="left">
- <img class="card-img-top" src="https://scontent-ort2-1.xx.fbcdn.net/v/t31.0-8/21458259_10213687537359647_583530011183018014_o.jpg?oh=df3a590eb77e848146f029972d032384&oe=5B06634C" alt="Card image cap"
-      style="width:220;height:300px; align="middle"">
-<a class="twitter-timeline" data-theme='light' height='420' href="https://twitter.com/natashacmathur?ref_src=twsrc%5Etfw">Tweets by natashacmathur</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8" align="right"></script>   
 
 
-    <p> Find me at: </p>
-    <p>
-      <i class="fa fa-envelope" aria-hidden="true"></i> <a href="mailto:natashamathur@uchicago.edu"></a> - 
-      <i class="fa fa-linkedin" aria-hidden="true"></i> <a href="https://www.linkedin.com/in/natashamathur"></a> 
-      - <i class="fa fa-github-alt" aria-hidden="true"></i> <a href="https://github.com/natashamathur">GitHub</a>
-                </p>
-                   
-  </body>
+<div class="container-fluid main-container">
+
+<!-- tabsets -->
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = false;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+  padding-left: 25px;
+  text-indent: 0;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+.tocify-subheader {
+  display: inline;
+}
+.tocify-subheader .tocify-item {
+  font-size: 0.95em;
+}
+
+</style>
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<br> <img src="images/Seltzer-picture%20for%20website-cropped.jpg" width="145 alt="Nathan Seltzer" style="float:left;margin:0 20px 20px 0;border-radius:0%"/>
+<h1>
+Nathan Seltzer
+</h1>
+<p><br> Ph.D. Student<br> Department of Sociology<br> Center for Demography and Ecology<br> University of Wisconsin-Madison<br></p>
+</p>
+<hr />
+<p>I am a doctoral student in Sociology at the <a href="http://www.ssc.wisc.edu/soc/">University of Wisconsin-Madison</a> and a trainee at the <a href="http://www.ssc.wisc.edu/cde/">Center for Demography and Ecology</a>. My work is supported the by the National Institute of Child Health and Human Development, the Social Security Administration, and the National Bureau of Economic Research.</p>
+<p>My research focuses on:</p>
+<ul>
+<li><p><strong>The demographic consequences of natural disasters</strong></p></li>
+<li><p><strong>Geographic and economic health inequalities</strong></p></li>
+<li><p><strong>Fertility decision-making during economic recessions</strong></p></li>
+</ul>
+<hr />
+<div id="publications" class="section level3">
+<h3>Publications</h3>
+<ul>
+<li><p><strong>Post-Disaster Fertility: Hurricane Katrina and the Changing Racial Composition of New Orleans</strong> <a href="https://link.springer.com/article/10.1007/s11111-017-0273-3">[pdf]</a><br />
+Nathan Seltzer and Jenna Nobles<br />
+Population and Environment, 2017<br />
+<em>Press: <a href="https://www.washingtonpost.com/news/monkey-cage/wp/2017/10/13/puerto-ricos-troubles-are-far-from-over-the-populations-health-is-at-risk/?utm_term=.752dbd77d2f2">[Washington Post]</a></em></p></li>
+<li><p><strong>Insomnia in Adults: The Impact of Earlier Cigarette Smoking from Adolescence to Adulthood</strong> <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4310766/">[pdf]</a><br />
+Judith Brook, Chenshu Zhang, Nathan Seltzer, and David Brook<br />
+Journal of Addiction Medicine, 2015</p></li>
+<li><p><strong>Adolescent ADHD and Adult Physical and Mental Health, Work Performance, and Financial Stress</strong> <a href="http://pediatrics.aappublications.org/content/131/1/5.short">[pdf]</a><br />
+Judith Brook, David Brook, Chenshu Zhang, Nathan Seltzer, and Stephen Finch<br />
+Pediatrics, 2013</p></li>
+<li><p><strong>Adult Work Commitment, Financial Stability, and Social Environment as Related to Marijuana Trajectories Beginning in Adolescence</strong> <a href="http://www.tandfonline.com/doi/abs/10.1080/08897077.2013.775092">[pdf]</a><br />
+Judith Brook, Jung Yeon Lee, Stephen J. Finch, David W. Brook, and Nathan Seltzer<br />
+Substance Abuse, 2013</p></li>
+<li><p><strong>Longitudinal Determinants of Substance Use Behaviors</strong> <a href="https://link.springer.com/article/10.1007/s11524-013-9827-6">[pdf]</a><br />
+Judith Brook, Jung Yeon Lee, Elizabeth Rubenstone, Stephen J. Finch, Nathan Seltzer, and David Brook<br />
+Journal of Urban Health, 2013</p></li>
+<li><p><strong>Personality Characteristics in the Mid-Forties Predict Women’s Smoking Cessation in their Mid-Sixties</strong> <a href="http://journals.sagepub.com/doi/abs/10.2466/09.10.13.PR0.113x26z9">[pdf]</a><br />
+Judith Brook, Chenshu Zhang, Elinor Balka, Nathan Seltzer, and David W. Brook<br />
+Psychological Reports, 2013</p></li>
+</ul>
+<hr />
+</div>
+<div id="working-papers" class="section level3">
+<h3>Working Papers</h3>
+<ul>
+<li><p><strong>Beyond the Great Recession: Labor Market Polarization and Ongoing Fertility Decline in the United States</strong> <a href="https://osf.io/preprints/socarxiv/vj9ge/">[SocArXiv]</a></p></li>
+<li><p><strong>The Mortality Implications of Disappearing Middle Class Jobs</strong></p></li>
+<li><p><strong>Less Trust, Moore Verification: Determining the Accuracy of Third-Party Data through an Innovative Use of Attention Checks</strong> <a href="https://osf.io/preprints/socarxiv/93msy">[SocArXiv]</a></p></li>
+</ul>
+<hr />
+</div>
+<div id="honors-and-awards" class="section level3">
+<h3>Honors and Awards</h3>
+<ul>
+<li><p><strong>NICHD Pre-Doctoral Traineeship</strong><br />
+National Institute of Child Health and Human Development<br />
+2017-Present</p></li>
+<li><p><strong>SSA/NBER Research Grant</strong><br />
+<em>Determinants of Life Expectancy by Income and Geography</em><br />
+Social Security Administration and National Bureau of Economic Research<br />
+2017-2018</p></li>
+<li><p><strong>University Fellowship</strong><br />
+University of Wisconsin-Madison<br />
+2015-2016</p></li>
+<li><p><strong>Travel Award</strong><br />
+University of Wisconsin-Madison, Center for Demography and Ecology<br />
+2016, 2017</p></li>
+</ul>
+<hr />
+</div>
+<div id="cv" class="section level3">
+<h3>CV</h3>
+<p>Click <a href="http://nathanseltzer.com/wp-content/uploads/2017/02/Nathan-Seltzer-CV-Public-Latest.pdf">here</a> for my CV.</p>
+<hr />
+</div>
+<div id="contact" class="section level3">
+<h3>Contact</h3>
+<p>Email: <a href="mailto:nseltzer@wisc.edu">nseltzer@wisc.edu</a></p>
+<p>Twitter: @<a href="https://twitter.com/n_seltzer">n_seltzer</a></p>
+<p><a href="https://bitly.com/1AEL93j">Google Scholar Profile</a></p>
+<hr />
+<p><img src="images/color-flush-UWlogo-print.png" width="500"></p>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-91007676-2', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
 </html>
-
-
-
-
-
-  
-
-
-
