@@ -1,57 +1,70 @@
 <!doctype html>
 <html>
   <head>
+    <meta charset="utf-8" />
+    <title>Natasha Mathur</title>
     <style>
-      * {
+      body {
         font-family: Verdana;
         background: #ede0f1;
+        margin: 0;
+        padding: 0;
       }
-      h1,
-      h2,
-      h3,
-      p {
+      .container {
+        width: 60%;
+        margin: 0 auto;
+        padding: 20px 0;
         text-align: left;
-        width: 55%;
+      }
+      h1, h2, h3, p, ul {
+        width: 100%;
+        text-align: left;
       }
       ul {
-        text-align: left;
-        width: 55%;
-        padding: 10px; /* Optional padding */
-        box-sizing: border-box; /* Ensures padding is included in the width */
-        overflow: hidden; /* Ensures no overflow */
-        margin: 0; /* Remove any default margins */
+        padding: 10px;
+        box-sizing: border-box;
+        overflow: hidden;
+        margin: 0 0 20px 0;
       }
-      .linkedin-logo {
-        width: 20px;
-        height: 20px;
-        vertical-align: middle;
+      .social-links {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .social-links img {
+        width: 30px;
+        height: auto;
+      }
+      .images-row {
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 20px;
+      }
+      .images-row img {
+        width: 20%;
+        height: auto;
+      }
+      .tweet-block {
+        width: 20%;
       }
     </style>
   </head>
   <body>
-    <center>
+    <div class="container">
       <h1>Hi! I'm Natasha Mathur</h1>
-      <div
-        style="
-          display: flex;
-          justify-content: left;
-          align-items: center;
-          width: 55%;
-          gap: 10px;
-        "
-      >
+      <div class="social-links">
         <a href="https://www.linkedin.com/in/natashamathur/" target="_blank">
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png"
             alt="LinkedIn"
-            style="width: 30px; height: auto"
           />
         </a>
         <a href="https://github.com/natashamathur" target="_blank">
           <img
             src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
             alt="GitHub"
-            style="width: 30px; height: auto"
           />
         </a>
       </div>
@@ -65,8 +78,8 @@
 
       <img
         src="https://github.com/natashamathur/natashamathur.github.io/blob/master/nairobi_skyline.jpg?raw=true"
-        width="30%"
-        height="auto"
+        style="width:30%;height:auto;"
+        alt="Nairobi Skyline"
       />
 
       <p>
@@ -78,47 +91,33 @@
       <p>
         Later that cycle, I joined the Biden campaign as a Senior Analytics
         Engineer, where I focused on
-        <a
-          href="https://twitter.com/AmyEGardner/status/1346191357925326850?s=20"
-          >early vote data</a
-        >. I continued this role for the Georgia runoff Senate races, leading
-        early vote data engineering efforts.
+        <a href="https://twitter.com/AmyEGardner/status/1346191357925326850?s=20">
+          early vote data
+        </a>.
+        I continued this role for the Georgia runoff Senate races, leading early vote data engineering efforts.
       </p>
 
-      <div
-        style="
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          gap: 30px;
-        "
-      >
-        <!-- Image -->
+      <div class="images-row">
         <img
           src="https://github.com/natashamathur/natashamathur.github.io/blob/master/warren.jpeg?raw=true"
-          width="20%"
+          alt="Warren campaign"
         />
 
-        <!-- Tweet Block -->
-        <div style="width: 20%; height: auto">
+        <div class="tweet-block">
           <blockquote class="twitter-tweet">
             <p lang="en" dir="ltr">
               How it started: How it ended:
               <a href="https://t.co/Lu09qvStIL">pic.twitter.com/Lu09qvStIL</a>
             </p>
             &mdash; Georgia Democrats (@GeorgiaDemocrat)
-            <a
-              href="https://twitter.com/GeorgiaDemocrat/status/1327336882724859905?ref_src=twsrc%5Etfw"
-              >November 13, 2020</a
-            >
+            <a href="https://twitter.com/GeorgiaDemocrat/status/1327336882724859905?ref_src=twsrc%5Etfw">
+              November 13, 2020
+            </a>
           </blockquote>
-          <script
-            async
-            src="https://platform.twitter.com/widgets.js"
-            charset="utf-8"
-          ></script>
         </div>
       </div>
+      <!-- Twitter widgets script (only once per page) -->
+      <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
       <p>
         Afterward I worked at
@@ -126,55 +125,39 @@
         where I helped political and non-profit organizations leverage their
         data and technology for maximum impact.
       </p>
-      <br />
 
       <h3>Public Engagement</h3>
       <ul>
         <li>
           <a
             href="https://harris.uchicago.edu/news-events/news/natasha-mathur-mscapp19-connection-between-real-world-and-data"
-            >Natasha Mathur, MSCAPP'19, on the Connection Between the Real World
-            and Data</a
-          >
+            >Natasha Mathur, MSCAPP'19, on the Connection Between the Real World and Data</a>
         </li>
-        <br />
         <li>
           Harvard T.H. Chan School of Public Health - Africa Health Conference
           <br />
           <a
-            href="https://www.linkedin.com/posts/harvard-chan-africa-health-students-forum_we-are-excited-to-announce-our-panels-for-activity-7164371869784125440-wIcP?utm_source=combined_share_message&utm_medium=member_desktop"
-            >Health startups made in Africa: How can entrepreneurs fill in
-            public health gaps?</a
-          >
+            href="https://www.linkedin.com/posts/harvard-chan-africa-health-students-forum_we-are-excited-to-announce-our-panels-for-activity-7164371869784125440-wIcP?utm_source=combined_share_message"
+            >Health startups made in Africa: How can entrepreneurs fill in public health gaps?</a>
         </li>
-        <br />
         <li>
           DataForProgress data engineering open mic
           <ul>
             <li>
               <a
                 href="https://docs.google.com/presentation/d/13-qsVM5JwTq63w3dC9PwLPUbhPG6-Q_qPxP0_vcUSI4/edit?usp=sharing"
-                >Early vote and ballot cure engineering</a
-              >
+                >Early vote and ballot cure engineering</a>
               pipelines used in the general and runoff election
             </li>
             <li>
               <a
                 href="https://docs.google.com/presentation/d/1iT62G7WFpuvLxEDBoC89SmcN3-yV06jqMo7vi5t_TMA/edit?usp=sharing"
-                >Leveraging Twitter data</a
-              >
+                >Leveraging Twitter data</a>
               on campaigns
-            </li>
-            <li>
-              <a
-                href="https://harris.uchicago.edu/news-events/news/data-primary-mscapp-2020-election"
-                >The Data Primary: MSCAPP in the 2020 Election</a
-              >
             </li>
           </ul>
         </li>
       </ul>
-      <br />
 
       <h3>Education</h3>
       <ul>
@@ -182,14 +165,11 @@
           M.S. in Computational Analysis and Public Policy (2019)
           <br />University of Chicago, Harris School of Public Policy
         </li>
-        <br />
         <li>
-          B.S. in Finance and Economics (2016) <br />
-          New York University, Leonard N. Stern School of Business
+          B.S. in Finance and Economics (2016)
+          <br />New York University, Leonard N. Stern School of Business
         </li>
-        <br />
       </ul>
-      <br />
-    </center>
+    </div>
   </body>
 </html>
